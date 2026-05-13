@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_165sdp"
+    android:layout_height="@dimen/_165sdp"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/iv_doctor"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_doctor"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:src="@drawable/doctor"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStatus"
+            app:layout_constraintBottom_toTopOf="@+id/tv_doctorName"
+            />
+
+        <TextView
+            android:id="@+id/tv_doctorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="M Jawad"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/text_gray"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@+id/iv_doctor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ll_role"
+            />
+
+        <!-- Wrap speciality and role in a vertical LinearLayout -->
+        <LinearLayout
+            android:id="@+id/ll_role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/tv_doctorName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <TextView
+                android:id="@+id/tvSpeciality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Speciality: Heart"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/text_gray"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tv_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Role: PROVIDER"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/text_gray"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

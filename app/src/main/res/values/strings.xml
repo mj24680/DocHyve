@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Doc Hyve</string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="dochyve">DocHyve</string>
+    <string name="sign_in_to_continue">Sign In to Continue.</string>
+    <string name="sign_up_prompt">Don\'t have an account?</string>
+    <string name="sign_up"><u>Sign Up Now,</u></string>
+    <string name="quick_easy">it\'s quick and easy.\.</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="hint_enter_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="hint_enter_password">Enter your password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="view_all">View All</string>
+    <string name="or_log_in_with">or Log in with</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_facebook">Sign in with Facebook</string>
+    <string name="logo_content_description">DocHyve Logo</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_appointments">Appointment Requests</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="total_patients">Total Patients</string>
+
+
+    <string-array name="status_list">
+        <item>All</item>
+        <item>Pending</item>
+        <item>Confirmed</item>
+        <item>Cancelled</item>
+        <item>Completed</item>
+        <item>Scheduled</item>
+    </string-array>
+
+</resources>

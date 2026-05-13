@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/half_white"
+        tools:context=".ui.dashboard.DashboardFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_2sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardElevation="2dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:strokeWidth="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/tvTotalPatients"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:text="@string/total_patients"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTotalPatientsCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:text="210"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTotalPatients" />
+
+                        <TextView
+                            android:id="@+id/tvTotalPatientsGrowth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="16%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/tvTotalPatientsSubText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvTotalPatientsCount" />
+
+                        <TextView
+                            android:id="@+id/tvTotalPatientsSubText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:text=" in last month"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/_8ssp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvTotalPatientsGrowth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTotalPatientsGrowth"
+                            app:layout_constraintTop_toTopOf="@id/tvTotalPatientsGrowth" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:clipToOutline="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardElevation="2dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:strokeWidth="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/tvNewPatients"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:text="New Patients"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvNewPatientsCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:autoSizeMaxTextSize="32sp"
+                            android:autoSizeMinTextSize="18sp"
+                            android:autoSizeStepGranularity="1sp"
+                            android:autoSizeTextType="uniform"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:text="100"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNewPatients" />
+
+                        <TextView
+                            android:id="@+id/tvNewPatientsGrowth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="16%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/tvNewPatientsSubText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvNewPatientsCount" />
+
+                        <TextView
+                            android:id="@+id/tvNewPatientsSubText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:text=" in last month"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/_8ssp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvNewPatientsGrowth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvNewPatientsGrowth"
+                            app:layout_constraintTop_toTopOf="@id/tvNewPatientsGrowth" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:clipToOutline="true"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_12sdp"
+                    app:cardElevation="2dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:strokeWidth="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/tvOldPatients"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:text="Old Patients"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvOldPatientsCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:maxLines="1"
+                            android:text="110"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvOldPatients" />
+
+                        <TextView
+                            android:id="@+id/tvOldPatientsGrowth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="16%"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_8ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/tvOldPatientsSubText"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvOldPatientsCount" />
+
+                        <TextView
+                            android:id="@+id/tvOldPatientsSubText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/montserrat"
+                            android:maxLines="1"
+                            android:text=" in last month"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/_8ssp"
+                            app:layout_constraintBottom_toBottomOf="@id/tvOldPatientsGrowth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvOldPatientsGrowth"
+                            app:layout_constraintTop_toTopOf="@id/tvOldPatientsGrowth" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/selectDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stats">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_15sdp">
+
+                    <TextView
+                        android:id="@+id/tvSelectDoctor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="start|center_vertical"
+                        android:text="Select Doctor"
+                        android:textColor="#9E9E9E"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:scaleType="center"
+                        android:src="@drawable/down_arrow" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/doctorListSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/selectDoctor">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Doctor’s list"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvDoctors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:nestedScrollingEnabled="false" />
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/upcomingAppointments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/doctorListSection">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_10sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Upcoming Appointments"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/txtMonthYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:background="#F6F8FF"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:padding="@dimen/_2sdp"
+                        android:text="June - 2023"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/btnPrev"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_1sdp"
+                            android:background="@color/primary_blue">
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_previous" />
+
+                        </FrameLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvDates"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/date_item" />
+
+                        <FrameLayout
+                            android:id="@+id/btnNext"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_1sdp"
+                            android:background="@color/primary_blue">
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_next" />
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_patients"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp" />
+
+                    <Button
+                        android:id="@+id/btnViewAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:backgroundTint="@color/primary_blue"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="@string/view_all"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        app:cornerRadius="8dp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_patientOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/upcomingAppointments">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_14sdp">
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/tv_overview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Patient Overview"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!-- Illness Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_illness"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        app:layout_constraintEnd_toStartOf="@id/cv_insurance"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_overview">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingHorizontal="@dimen/_14sdp"
+                            android:paddingVertical="@dimen/_11sdp">
+
+                            <TextView
+                                android:id="@+id/tv_illness"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Illnesses"
+                                android:textSize="@dimen/_12ssp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/iv_illness_redirect"
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:src="@drawable/ic_redirect"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <!-- Insurance Card -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cv_insurance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/cv_illness"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cv_illness"
+                        app:layout_constraintTop_toTopOf="@id/cv_illness">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingHorizontal="@dimen/_14sdp"
+                            android:paddingVertical="@dimen/_11sdp">
+
+                            <TextView
+                                android:id="@+id/tv_insurance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserrat"
+                                android:text="Insurances"
+                                android:textSize="@dimen/_12ssp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/iv_insurance_redirect"
+                                android:layout_width="@dimen/_12sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:src="@drawable/ic_redirect"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cv_patientOverview"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/_6sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:background="@color/white"
+                    >
+
+                    <ImageView
+                        android:id="@+id/ic_reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_reviews"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Reviews And Ratings"
+                        android:textSize="@dimen/_12sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/text_gray"
+                        app:layout_constraintStart_toEndOf="@+id/ic_reviews"
+                        app:layout_constraintEnd_toStartOf="@+id/cv_seeDetails"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_seeDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="@dimen/_4sdp"
+                            android:paddingVertical="@dimen/_4sdp"
+                            android:background="#E2E2E2"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:fontFamily="@font/montserrat"
+                                android:textStyle="bold"
+                                android:textSize="@dimen/_11sdp"
+                                android:text="See Details" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:src="@drawable/ic_redirect"
+                                android:layout_gravity="center"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_impressions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/cv_reviews"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cv_clicks"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_5sdp"
+                    android:background="@color/white"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_impressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_impressions"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Impressions"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/text_gray"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@id/iv_impressions"
+                        app:layout_constraintTop_toTopOf="@+id/iv_impressions"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_impressions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="120"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@id/iv_impressions"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_impressions"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20%"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/green"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/tv_impressions"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_impressions"
+                        app:layout_constraintTop_toTopOf="@+id/tv_impressions"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_clicks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toEndOf="@id/cv_impressions"
+                app:layout_constraintTop_toBottomOf="@+id/cv_reviews"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_5sdp"
+                    android:background="@color/white"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_clicks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_clicks"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clicks"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/text_gray"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@id/iv_clicks"
+                        app:layout_constraintTop_toTopOf="@+id/iv_clicks"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_clicks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="120"
+                        android:textSize="@dimen/_16sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@id/iv_clicks"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_clicks"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20%"
+                        android:textColor="@color/red"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toEndOf="@+id/tv_clicks"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_clicks"
+                        app:layout_constraintTop_toTopOf="@+id/tv_clicks"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

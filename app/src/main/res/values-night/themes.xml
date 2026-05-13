@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DocHyve" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/white</item>
+
+        <!-- Dark icons for light status bar -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Global cursor color for all simple EditTexts -->
+        <item name="colorControlActivated">@color/black</item>
+    </style>
+</resources>

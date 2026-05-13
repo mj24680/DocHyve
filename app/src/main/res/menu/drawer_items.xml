@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Dashboard" android:id="@+id/btnDashboard" android:icon="@drawable/ic_dashboard"/>
+    <item android:title="Providers" android:id="@+id/btnProviders" android:icon="@drawable/ic_provider"/>
+    <item android:title="Boost Provider" android:id="@+id/btnBoostProvider" android:icon="@drawable/ic_provider"/>
+    <item android:title="Patients" android:id="@+id/btnPatients" android:icon="@drawable/ic_patients"/>
+    <item android:title="Appointments" android:id="@+id/btnAppointments" android:icon="@drawable/ic_appointments"/>
+    <item android:title="Insurance" android:id="@+id/btnInsurance" android:icon="@drawable/ic_insurance"/>
+    <item android:title="Credentialing" android:id="@+id/btnCredentialing" android:icon="@drawable/ic_credentialing"/>
+    <item android:title="RCM" android:id="@+id/btnRCM" android:icon="@drawable/ic_rcm"/>
+    <item android:title="Support" android:id="@+id/btnSupport" android:icon="@drawable/ic_support"/>
+    <item android:title="Billing" android:id="@+id/btnBilling" android:icon="@drawable/ic_billing"/>
+    <item android:title="Roles &amp; Features" android:id="@+id/btnRolesAndFeatures" android:icon="@drawable/ic_billing"/>
+
+</menu>

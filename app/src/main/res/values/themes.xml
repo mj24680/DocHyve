@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Base.Theme.DocHyve" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/white</item>
+
+        <!-- Dark icons for light status bar -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Global cursor color for all simple EditTexts -->
+        <item name="colorControlActivated">@color/black</item>
+
+    </style>
+
+    <style name="ToolbarTitleBold" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/_15ssp</item>
+
+    </style>
+
+    <!-- App Theme -->
+    <style name="Theme.DocHyve" parent="Base.Theme.DocHyve" />
+
+    <style name="Theme.DocHyve.DatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/primary_blue</item>
+    </style>
+
+</resources>
